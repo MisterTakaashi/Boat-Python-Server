@@ -1,7 +1,6 @@
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 
 class SimpleEcho(WebSocket):
-
     def handleMessage(self):
         # echo message back to client
         print('Message recu: ' + self.data)
@@ -12,6 +11,10 @@ class SimpleEcho(WebSocket):
 
     def handleClose(self):
         print(self.address, 'closed')
+
+class BoatServer():
+    def boat_test():
+        print("Hello !")
 
 server = SimpleWebSocketServer('', 8000, SimpleEcho)
 server.serveforever()
